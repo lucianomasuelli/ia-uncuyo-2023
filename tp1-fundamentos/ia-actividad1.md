@@ -1,0 +1,28 @@
+Actividad Preliminar 1
+Aplicaciones de inteligencia artificial
+
+Spline: Potenciando el Diseño 3D para la Web con Innovación IA
+Spline es un software vanguardista en el ámbito del diseño 3D, especialmente diseñado para la creación de recursos tridimensionales destinados a la web. Su enfoque revolucionario se basa en una integración inteligente de la Inteligencia Artificial para empoderar a los usuarios en la materialización de sus ideas en un entorno 3D dinámico y atractivo.
+
+Este software ofrece una herramienta innovadora que permite a los usuarios dar vida a sus conceptos mediante la generación de objetos, animaciones y texturas, todo impulsado por la potencia de la IA. A través de instrucciones simples, es posible transformar rápidamente una idea en un diseño concreto, agilizando así el proceso creativo.
+
+Spline facilita la modificación y mejora de objetos con una intuitiva interfaz. Facilita la aplicación de materiales, la incorporación de iluminación y demás elementos que enriquecen el diseño final. Esta tecnología trae el diseño 3D al alcance de aquellos usuarios que quizás no cuentan con una amplia familiaridad en el campo, eliminando barreras y fomentando la expresión creativa sin requerir un profundo conocimiento previo.
+A su vez, profesionales experimentados en diseño pueden aprovechar esta herramienta como un recurso valioso para agilizar sus tareas y obtener resultados de alta calidad en menor tiempo. La sinergia entre la creatividad humana y la IA hace que Spline sea una herramienta esencial en el arsenal de cualquier diseñador, permitiendo tanto a novatos como a expertos alcanzar nuevas cimas de innovación en el diseño 3D.
+
+Spline también cuenta con AI Style Transfer, una función  que otorga al usuario la capacidad de crear imágenes de manera única. Esta herramienta se basa en la combinación de las escenas 3D que el usuario ha diseñado, sirviendo como lienzo inicial para la generación de nuevas imágenes. Con esta funcionalidad, se posibilita la visualización instantánea de conceptos en forma de imágenes con un estilo distintivo.
+Este proceso de transferencia de estilo, potenciado por la inteligencia artificial, no solo permite plasmar rápidamente las ideas en el diseño, sino que también abre las puertas a la expansión de las creaciones 3D.
+
+
+
+
+Soundraw: generador de música
+Soundraw es un software que  saca partido de la Inteligencia Artificial para dar origen a composiciones musicales completamente nuevas, libres de los enredos del copyright. Este software opera en la intersección del arte y la tecnología, empoderando a los usuarios con herramientas para la creación musical y la producción de contenido.
+Esta herramienta le concede al usuario la habilidad de concebir canciones originales con una gran facilidad. Mediante la selección del género musical, el estado de ánimo deseado y la duración de la composición, la IA  genera una base musical única en su tipo, adaptada a los criterios seleccionados. Este enfoque innovador elimina la necesidad de conocimientos musicales profundos, permitiendo que tanto novatos como expertos exploren su lado creativo con facilidad.
+
+Un aspecto que distingue a Soundraw es el control que brinda al usuario sobre cada componente de la pista musical generada. Cada elemento puede ser personalizado y ajustado a placer, otorgando una experiencia verdaderamente personalizada. Esta capacidad de manipulación fina convierte a Soundraw en una herramienta versátil y accesible para creadores de contenido, que pueden adaptar sus creaciones musicales para complementar sus vídeos, en lugar de luchar por ajustar sus vídeos a la música.
+Una ventaja sobresaliente de este software es su capacidad para solucionar el problema del copyright. Al generar música original y libre de restricciones, Soundraw concede a los usuarios una gran libertad para incorporar sus composiciones en diversas plataformas y proyectos, sin temor a conflictos legales. Esto trasciende el mundo de la creación y la producción, impactando directamente en la forma en que los creadores de contenido experimentan y presentan sus obras al mundo.
+Por ejemplo, se puede observar en las imágenes que se le  indicó al software que genere pistas dentro del género de Techno & Trance con un mood sentimental, recibiendo en el momento la respuesta con variadas pistas que pueden ser modificadas y descargadas en el momento.
+
+Rompe las barreras creativas que antes obstaculizaban a los creadores de vídeos, facilitando la integración entre la música y las imágenes. La capacidad de generar música a la medida, logrando el ambiente emocional deseado, es una ventaja que transforma la narrativa visual y auditiva en una experiencia cohesiva y cautivadora.
+
+Es innegable que estas nuevas tecnologías que aparecen con la explosión de la Inteligencia Artificial brindan muchas ventajas y comodidades tanto en los ámbitos mencionados anteriormente como en muchos más. Sin embargo, esta evolución tecnológica también ha desencadenado una evolución en las estructuras laborales, con profesiones como la del productor musical entrando en un proceso de redefinición. La irrupción de herramientas como Soundraw, con su habilidad para generar pistas musicales simples de manera autónoma, plantea un escenario en el que las tareas tradicionalmente humanas pueden ser asumidas por máquinas con destrezas algorítmicas. Este cambio de paradigma conlleva una adaptación crucial para profesionales de este tipo, quienes se encuentran ante el desafío de adaptarse a estas innovaciones sin permitir que las mismas les pasen por encima.
