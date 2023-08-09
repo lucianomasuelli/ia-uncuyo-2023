@@ -1,7 +1,7 @@
-#Actividad Preliminar 1
-##Aplicaciones de inteligencia artificial
+# Actividad Preliminar 1
+## Aplicaciones de inteligencia artificial
 
-###Spline: Potenciando el Diseño 3D para la Web con Innovación IA
+### Spline: Potenciando el Diseño 3D para la Web con Innovación IA
 Spline es un software vanguardista en el ámbito del diseño 3D, especialmente diseñado para la creación de recursos tridimensionales destinados a la web. Su enfoque revolucionario se basa en una integración inteligente de la Inteligencia Artificial para empoderar a los usuarios en la materialización de sus ideas en un entorno 3D dinámico y atractivo.
 
 Este software ofrece una herramienta innovadora que permite a los usuarios dar vida a sus conceptos mediante la generación de objetos, animaciones y texturas, todo impulsado por la potencia de la IA. A través de instrucciones simples, es posible transformar rápidamente una idea en un diseño concreto, agilizando así el proceso creativo.
@@ -13,7 +13,7 @@ Spline también cuenta con AI Style Transfer, una función  que otorga al usuari
 Este proceso de transferencia de estilo, potenciado por la inteligencia artificial, no solo permite plasmar rápidamente las ideas en el diseño, sino que también abre las puertas a la expansión de las creaciones 3D.
 
 
-###Soundraw: generador de música
+### Soundraw: generador de música
 Soundraw es un software que  saca partido de la Inteligencia Artificial para dar origen a composiciones musicales completamente nuevas, libres de los enredos del copyright. Este software opera en la intersección del arte y la tecnología, empoderando a los usuarios con herramientas para la creación musical y la producción de contenido.
 Esta herramienta le concede al usuario la habilidad de concebir canciones originales con una gran facilidad. Mediante la selección del género musical, el estado de ánimo deseado y la duración de la composición, la IA  genera una base musical única en su tipo, adaptada a los criterios seleccionados. Este enfoque innovador elimina la necesidad de conocimientos musicales profundos, permitiendo que tanto novatos como expertos exploren su lado creativo con facilidad.
 
