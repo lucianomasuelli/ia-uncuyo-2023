@@ -3,8 +3,8 @@
 
 ### Spline: Potenciando el Diseño 3D para la Web con Innovación IA
 Spline es un software vanguardista en el ámbito del diseño 3D, especialmente diseñado para la creación de recursos tridimensionales destinados a la web. Su enfoque revolucionario se basa en una integración inteligente de la Inteligencia Artificial para empoderar a los usuarios en la materialización de sus ideas en un entorno 3D dinámico y atractivo.
-
 Este software ofrece una herramienta innovadora que permite a los usuarios dar vida a sus conceptos mediante la generación de objetos, animaciones y texturas, todo impulsado por la potencia de la IA. A través de instrucciones simples, es posible transformar rápidamente una idea en un diseño concreto, agilizando así el proceso creativo.
+![Captura de pantalla 2023-08-09 130757](https://github.com/lucianomasuelli/ia-uncuyo-2023/assets/83616746/64cb2ee1-e9ae-4845-b594-9466f38048f3)
 
 Spline facilita la modificación y mejora de objetos con una intuitiva interfaz. Facilita la aplicación de materiales, la incorporación de iluminación y demás elementos que enriquecen el diseño final. Esta tecnología trae el diseño 3D al alcance de aquellos usuarios que quizás no cuentan con una amplia familiaridad en el campo, eliminando barreras y fomentando la expresión creativa sin requerir un profundo conocimiento previo.
 A su vez, profesionales experimentados en diseño pueden aprovechar esta herramienta como un recurso valioso para agilizar sus tareas y obtener resultados de alta calidad en menor tiempo. La sinergia entre la creatividad humana y la IA hace que Spline sea una herramienta esencial en el arsenal de cualquier diseñador, permitiendo tanto a novatos como a expertos alcanzar nuevas cimas de innovación en el diseño 3D.
