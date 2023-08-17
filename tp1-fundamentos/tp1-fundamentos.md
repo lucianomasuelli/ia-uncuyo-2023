@@ -31,4 +31,6 @@ También es importante destacar que estas limitaciones matemáticas que presenta
 puede demostrar formalmente nuestro _talento humano_.
 
 ### El argumento de la informalidad
-
+Propone que la IA presenta el _**problema de la calificación**_, sosteniendo que el comportamiento humano es demasiado complejo como para que un simple conjunto 
+de reglas pueda capturarlo y como las computadoras no hacen mas que seguir conjuntos de reglas, entonces no pueden generar un comportamiento tan inteligente 
+como el de los humanos.
