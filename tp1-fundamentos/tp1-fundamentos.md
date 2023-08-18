@@ -44,4 +44,13 @@ incorparar este conocimiento a los procesos de aprendizaje de las redes neuronal
 3. Los algoritmos de aprendizaje no tienen un buen rendimiento con muchas características, y si seleccionamos un subconjunto de características, "no existe una forma conocida de agregar nuevas características en caso de que el conjunto actual resulte insuficiente para explicar los hechos aprendidos".
 4. El cerebro es capaz de dirigir sus sensores para buscar información relevante y procesarla para extraer aspectos pertinentes a la situación actual. Sin embargo, Dreyfus y Dreyfus afirman: "Actualmente, no se entienden detalles de este mecanismo ni siquiera se han formulado hipótesis de manera que pudieran guiar la investigación en IA".
 
-Por suerte, todos estos puntos han sido 
+Estos problemas con el paso del tiempo han sido abordados y hoy en día se han solucionado total o parcilmente cada uno de ellos.  
+Dreyfus también argumenta el concepto de la _cognición encarnada_ sostiene que no tiene sentido considerar el cerebro por separado: la cognición ocurre dentro de un cuerpo, que está integrado en un entorno. Necesitamos estudiar el sistema en su totalidad.
+
+## Inteligencia Artificial fuerte
+Este concepto se refiere a la afirmación de que las IA podrían llegar a pensar como lo hace un ser humano, tener consciencia y no sólo ser una simulación del pensamiento.
+Muchos filósofos piensan que el hecho de que una máquina pase la Prueba de Turing no es sificiente para afirmar que esta esta realmente pensando. De ehcho el mismo Turing llama argumento de la consciencia a la afirmación 
+de que la máquina debe ser consciente de sus propios estados mentales y acciones. Otros dos puntos de vista son la fenomenología, o el estudio de la experiencia directa: la máquina debe realmente sentir emociones y 
+la intencionalidad, es decir, la pregunta de si las supuestas creencias, deseos y otras representaciones de la máquina son realmente "acerca" de algo en el mundo real.  
+
+
