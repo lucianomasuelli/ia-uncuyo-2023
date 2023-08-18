@@ -32,5 +32,16 @@ puede demostrar formalmente nuestro _talento humano_.
 
 ### El argumento de la informalidad
 Propone que la IA presenta el _**problema de la calificación**_, sosteniendo que el comportamiento humano es demasiado complejo como para que un simple conjunto 
-de reglas pueda capturarlo y como las computadoras no hacen mas que seguir conjuntos de reglas, entonces no pueden generar un comportamiento tan inteligente 
+de reglas pueda capturarlo, y como las computadoras no hacen mas que seguir conjuntos de reglas, entonces no pueden generar un comportamiento tan inteligente 
 como el de los humanos.
+La posición que se critica principalmente por el filósofo Hubert Dreyfus llegó a ser llamada _"Good Old-Fashioned AI"_ o GOFAI en el que sostiene que los agentes lógicos que razonan a partir de conjuntos de hechos y reglas que describen su domino, son vulnerables al problema de la clasificación. La crítica de Dreyfus, por lo tanto, no va dirigida contra las computadoras en sí, sino más bien contra una manera particular de programarlas.  
+Bajo la perspectiva de Dreyfus, la experiencia humana incluye el conocimiento de algunas reglas, pero solamente como un "contexto holístico" o "trasfondo" dentro del cual operan los seres humanos.
+
+Dreyfus y Dreyfus en 1986 proponen una arquitectura de red neuronal organizada en una gran biblioteca de casos, pero señalan varios problemas:
+1. No se puede conseguir una buena generalización a partir de ejemplos sin conocimiento previo o "background knowledge". Según ellos, no se sabe como
+incorparar este conocimiento a los procesos de aprendizaje de las redes neuronales.
+2. Según ellos no se puede lograr un aprendizaje no asistido.
+3. Los algoritmos de aprendizaje no tienen un buen rendimiento con muchas características, y si seleccionamos un subconjunto de características, "no existe una forma conocida de agregar nuevas características en caso de que el conjunto actual resulte insuficiente para explicar los hechos aprendidos".
+4. El cerebro es capaz de dirigir sus sensores para buscar información relevante y procesarla para extraer aspectos pertinentes a la situación actual. Sin embargo, Dreyfus y Dreyfus afirman: "Actualmente, no se entienden detalles de este mecanismo ni siquiera se han formulado hipótesis de manera que pudieran guiar la investigación en IA".
+
+Por suerte, todos estos puntos han sido 
