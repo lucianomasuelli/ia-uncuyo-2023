@@ -23,4 +23,15 @@
 - Actuadores: raqueta de tenis, pelota, movimiento del jugador
 - Sensores: sensores de movimiento (cámaras)
 - Entorno: chancha de práctica con dimensiones específicas. Es totalmente observable, determinista, conocido.
-  
+## Realizar un salto de altura
+- Agente: máquina capaz de saltar
+- Medidor de perfromance: cantidada de saltos que superen un umbral determinado.
+- Actuadores: dispositivo que impulse la máquina hacia arriba.
+- Sensores: medición de la altura con una cámara, sensores para regular el equilibrio al saltar y aterrizar.
+- Entorno: plataforma o pista donde se realiza el salto. Es totalmente observable, determinista y conocido.
+## Pujar por un artículo en una subasta
+- Agente: comprador
+- Medidor de performance: cantidad de artículos obtenidos con el dinero disponible, diferencia de precio con otros artículos similares.
+- Actuadores: dispositivos para comunicar las ofertas y pujas (salida de voz, por pantalla, etc)
+- Sensores: receptores de ofertas de otros compradores y el vendedor.
+- Entorno: sistema o paltaforma de subasta de artículos, participantes, subastador, ofertas. Es parcialmente observable, estocástico, conocido.
