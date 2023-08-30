@@ -38,7 +38,9 @@ class Agent:
             self.perf += 1
 
     def think(self,env):
-        for _ in range(50):
+        time = 0
+        self.clean(env)
+        while time < 1000 and self.perf < env.dirt_count:
             if env.is_dirty(self.positionX, self.positionY+1):
                 self.up(env)
             elif env.is_dirty(self.positionX, self.positionY-1):
@@ -50,24 +52,31 @@ class Agent:
             else:
                 move = random.randint(0,3)
                 if move == 0:
-                    env.agent.up(env)
+                    self.up(env)
                 elif move == 1:
-                    env.agent.down(env)
+                    self.down(env)
                 elif move == 2:
-                    env.agent.left(env)
+                    self.left(env)
                 elif move == 3:
-                    env.agent.right(env)
+                    self.right(env)
+            time += 1
+        print("Unidades de tiempo consumidas: " + str(time))
             
 class Enviroment:
-    def __init__(self,sizeX,sizeY,init_posX,init_posY):
+    def __init__(self,sizeX,sizeY,init_posX,init_posY,dirt_rate):
         self.sizeX = sizeX
         self.sizeY = sizeY
-        self.agent = Agent(init_posX, init_posY)
         self.matriz = []
+        self.dirt_count = 0
         for _ in range(sizeX):
-            fila = random.choices([0,1],[0.7,0.3], k=sizeY) #devuelve una lista con k elementos que pueden ser 0 o 1, con probabilidades 0.7 y 0.3 respectivamente.
+            fila = []
+            for _ in range(sizeY):
+                num = random.choices([0,1], [1-dirt_rate, dirt_rate])[0]
+                fila.append(num)
+                self.dirt_count += num
             self.matriz.append(fila)
 
+        self.agent = Agent(init_posX, init_posY)
         self.agent.think(self)
     
     def is_dirty(self, posX, posY):
@@ -79,7 +88,7 @@ class Enviroment:
         return False
         
     def accept_action(self, posX, posY):
-        if (0 <= posX <= self.sizeX and 0 <= posY <= self.sizeY):
+        if (0 <= posX <= self.sizeX-1 and 0 <= posY <= self.sizeY-1):
             return True
         else:
             return False
@@ -89,7 +98,11 @@ class Enviroment:
             print(i)
 
 
-env = Enviroment(100,100,0,0)
-#env.printMatrix()
-print("Performance: " + str(env.agent.perf))
-#env.printMatrix()
+for i in range(10):
+    print(i)
+    size = 8
+    posX = random.randint(0,size-1)
+    posY = random.randint(0,size-1)
+    env = Enviroment(size,size,posX,posY,0.2)
+    print("Cantidad de celdas sucias: " + str(env.dirt_count))
+    print("Performance: " + str(env.agent.perf))

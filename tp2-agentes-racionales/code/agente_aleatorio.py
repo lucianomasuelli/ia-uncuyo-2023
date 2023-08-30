@@ -5,49 +5,74 @@ class Agent:
         self.positionX = posX
         self.positionY = posY
         self.perf = 0
+    
+    def start(self,env):
+        time = 0
+        while time < 1000 and self.perf < env.dirt_count:
+            clean = random.randint(0,1)
+            if clean == 1:
+                self.clean(env,self.positionX,self.positionY)
+            
+            move = random.randint(0,4)
+
+            if move == 0:
+                self.up(env)
+            elif move == 1:
+                self.down(env)
+            elif move == 2:
+                self.left(env)
+            elif move == 3:
+                self.right(env)
+
+            time += 1
+        print("Unidades de tiempo consumidas: " + str(time))
+            
         
     def up(self, enviroment):
         if (enviroment.accept_action(self.positionX, self.positionY+1)):
             self.positionY += 1
-            self.clean(enviroment, self.positionX, self.positionY)
-            print("se mueve arriba")
+            #print("se mueve arriba")
 
     def down(self, enviroment):
         if (enviroment.accept_action(self.positionX, self.positionY-1)):
             self.positionY -= 1
-            self.clean(enviroment, self.positionX, self.positionY)
-            print("se mueve abajo")
+            #print("se mueve abajo")
 
 
     def left(self, enviroment):
         if (enviroment.accept_action(self.positionX-1, self.positionY)):
             self.positionX -= 1
-            self.clean(enviroment, self.positionX, self.positionY)
-            print("se mueve hacia la izquierda")
+            #print("se mueve hacia la izquierda")
 
     def right(self, enviroment):
         if (enviroment.accept_action(self.positionX+1, self.positionY)):
             self.positionX += 1
-            self.clean(enviroment, self.positionX, self.positionY)
-            print("se mueve hacia la derecha")
+            #print("se mueve hacia la derecha")
 
     def clean(self, env, posX, posY):
         if env.is_dirty():
-            print("Limpia")
+            #print("Limpia")
             env.matriz[posX][posY] = 0
             self.perf += 1
 
             
 class Enviroment:
-    def __init__(self,sizeX,sizeY,init_posX,init_posY):
+    def __init__(self,sizeX,sizeY,init_posX,init_posY,dirt_rate):
         self.sizeX = sizeX
         self.sizeY = sizeY
-        self.agent = Agent(init_posX, init_posY)
         self.matriz = []
-        for _ in range(sizeX):
-            fila = random.choices([0,1],[0.7,0.3], k=sizeY) #devuelve una lista con k elementos que pueden ser 0 o 1, con probabilidades 0.7 y 0.3 respectivamente.
+        self.dirt_count = 0
+        for i in range(sizeX):
+            fila = []
+            for j in range(sizeY):
+                num = random.choices([0,1], [1-dirt_rate, dirt_rate])[0]
+                fila.append(num)
+                self.dirt_count += num
             self.matriz.append(fila)
-    
+
+        self.agent = Agent(init_posX, init_posY)
+        self.agent.start(self)
+
     def is_dirty(self):
         if (self.matriz[self.agent.positionX][self.agent.positionY] == 1):
             return True
@@ -55,7 +80,7 @@ class Enviroment:
             return False
         
     def accept_action(self, posX, posY):
-        if (0 <= posX <= self.sizeX and 0 <= posY <= self.sizeY):
+        if (0 <= posX <= self.sizeX-1 and 0 <= posY <= self.sizeY-1):
             return True
         else:
             return False
@@ -64,18 +89,11 @@ class Enviroment:
         for i in self.matriz:
             print(i)
 
-
-env = Enviroment(100,100,0,0)
-#env.printMatrix()
-for i in range(50):
-    move = random.randint(0,3)
-    if move == 0:
-        env.agent.up(env)
-    elif move == 1:
-        env.agent.down(env)
-    elif move == 2:
-        env.agent.left(env)
-    elif move == 3:
-        env.agent.right(env)
-print("Performance: " + str(env.agent.perf))
-#env.printMatrix()
+for i in range(10):
+    print(i)
+    size = 8
+    posX = random.randint(0,size-1)
+    posY = random.randint(0,size-1)
+    env = Enviroment(size,size,posX,posY,0.2)
+    print("Cantidad de celdas sucias: " + str(env.dirt_count))
+    print("Performance: " + str(env.agent.perf))
