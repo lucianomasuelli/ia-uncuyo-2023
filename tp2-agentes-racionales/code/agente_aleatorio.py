@@ -91,9 +91,9 @@ class Enviroment:
 
 for i in range(10):
     print(i)
-    size = 8
+    size = 128
     posX = random.randint(0,size-1)
     posY = random.randint(0,size-1)
-    env = Enviroment(size,size,posX,posY,0.2)
+    env = Enviroment(size,size,posX,posY,0.8)
     print("Cantidad de celdas sucias: " + str(env.dirt_count))
     print("Performance: " + str(env.agent.perf))

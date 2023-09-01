@@ -10,30 +10,30 @@ class Agent:
         if (enviroment.accept_action(self.positionX, self.positionY+1)):
             self.positionY += 1
             self.clean(enviroment)
-            print("se mueve arriba")
+            #print("se mueve arriba")
 
     def down(self, enviroment):
         if (enviroment.accept_action(self.positionX, self.positionY-1)):
             self.positionY -= 1
             self.clean(enviroment)
-            print("se mueve abajo")
+            #print("se mueve abajo")
 
 
     def left(self, enviroment):
         if (enviroment.accept_action(self.positionX-1, self.positionY)):
             self.positionX -= 1
             self.clean(enviroment)
-            print("se mueve hacia la izquierda")
+            #print("se mueve hacia la izquierda")
 
     def right(self, enviroment):
         if (enviroment.accept_action(self.positionX+1, self.positionY)):
             self.positionX += 1
             self.clean(enviroment)
-            print("se mueve hacia la derecha")
+           # print("se mueve hacia la derecha")
 
     def clean(self, env):
         if env.is_dirty(self.positionX, self.positionY):
-            print("Limpia")
+           # print("Limpia")
             env.matriz[self.positionX][self.positionY] = 0
             self.perf += 1
 
@@ -100,9 +100,9 @@ class Enviroment:
 
 for i in range(10):
     print(i)
-    size = 8
+    size = 128
     posX = random.randint(0,size-1)
     posY = random.randint(0,size-1)
-    env = Enviroment(size,size,posX,posY,0.2)
+    env = Enviroment(size,size,posX,posY,0.8)
     print("Cantidad de celdas sucias: " + str(env.dirt_count))
     print("Performance: " + str(env.agent.perf))
