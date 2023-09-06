@@ -9,43 +9,42 @@ class Agent:
         self.goal = goal
         self.env : Enviroment = env
         self.perf = 0
-
-    def goal_test(self, pos):
-        if(pos == self.goal_pos):
-            return True
-        return False
     
     def find_optimal_path_bfs(self):
         actions = bfs(self.position,self.goal,self.env)
         return actions
 
-    def up(self, enviroment):
-        if (enviroment.accept_action(self.positionX, self.positionY+1)):
-            self.positionY += 1
-            self.clean(enviroment)
-            #print("se mueve arriba")
+    def up(self):
+        self.position = (self.position[0] - 1, self.position[1])
 
-    def down(self, enviroment):
-        if (enviroment.accept_action(self.positionX, self.positionY-1)):
-            self.positionY -= 1
-            self.clean(enviroment)
-            #print("se mueve abajo")
+    def down(self):
+        self.position = (self.position[0] + 1, self.position[1])
 
+    def left(self):
+        self.position = (self.position[0], self.position[1] - 1)
 
-    def left(self, enviroment):
-        if (enviroment.accept_action(self.positionX-1, self.positionY)):
-            self.positionX -= 1
-            self.clean(enviroment)
-            #print("se mueve hacia la izquierda")
+    def right(self):
+        self.position = (self.position[0], self.position[1] + 1)
 
-    def right(self, enviroment):
-        if (enviroment.accept_action(self.positionX+1, self.positionY)):
-            self.positionX += 1
-            self.clean(enviroment)
-           # print("se mueve hacia la derecha")
-
-    def clean(self, env):
-        if env.is_dirty(self.positionX, self.positionY):
-           # print("Limpia")
-            env.matriz[self.positionX][self.positionY] = 0
-            self.perf += 1
+    def move(self, actions):
+        for action in actions:
+            if(action == "up"):
+                self.up()
+                if(self.position == self.goal):
+                    print("Objetivo alcanzado")
+                    return
+            if(action == "down"):
+                self.down()
+                if(self.position == self.goal):
+                    print("Objetivo alcanzado")
+                    return
+            if(action == "left"):
+                self.left()
+                if(self.position == self.goal):
+                    print("Objetivo alcanzado")
+                    return
+            if(action == "right"):
+                self.right()
+                if(self.position == self.goal):
+                    print("Objetivo alcanzado")
+                    return
