@@ -1,11 +1,13 @@
 from agent import Agent
 from enviroment import Enviroment
+from multiprocessing import Process
 
-start = (2,2)
-goal = (68,8)
+start = (8,6)
+goal = (9,1)
 
-env = Enviroment(start,goal,(100,100))
+env = Enviroment(start,goal,(10,10))
 agent = Agent(start,goal,env)
+
 path = agent.find_optimal_path_bfs()
 #env.printMatrix()
 print(path)

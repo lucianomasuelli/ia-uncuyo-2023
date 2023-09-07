@@ -5,7 +5,6 @@ class Enviroment:
         self.size = size
         self.matriz = []
         obstacle_rate = 0.08
-        self.obstacles = []
         for i in range(size[0]):
             fila = []
             for j in range(size[1]):
@@ -16,12 +15,10 @@ class Enviroment:
                     fila.append(3)
                 else:
                     fila.append(num)
-                if(num == 1):
-                    self.obstacles.append((i,j))
             self.matriz.append(fila)
         
     def accept_action(self, posX, posY):
-        if (((0 <= posX <= self.size[0]-1) and (0 <= posY <= self.size[1]-1)) and self.matriz[posX][posY] != 1):
+        if (((0 <= posX <= self.size[0]-1) and (0 <= posY <= self.size[1]-1)) and (self.matriz[posX][posY] != 1)):
             return True
         else:
             return False

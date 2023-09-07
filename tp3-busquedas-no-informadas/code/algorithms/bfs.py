@@ -15,36 +15,27 @@ def bfs(start, goal, env:Enviroment):
     node = Node(None, start, None)
     frontier = deque() #utilizar append() y popleft() para FIFO
     frontier.append(node)
-    explored = []
+    explored = set()
     tree.root = node
     if(goal == node.state):
         return node
     while frontier:
         node = frontier.popleft()
-        explored.append(node.state)
-        if(env.accept_action(node.state[0]-1,node.state[1])): #verifica si la posición de arriba es válida
-            child_node = Node(node, (node.state[0]-1,node.state[1]), 'up')
-            if (not (child_node.state in explored) and not (child_node in frontier)):
-                if(goal == child_node.state):
-                    return get_actions(child_node)
-                frontier.append(child_node)
-        if(env.accept_action(node.state[0]+1,node.state[1])):
-            child_node = Node(node, (node.state[0]+1,node.state[1]), 'down')
-            if (not (child_node.state in explored) and not (child_node in frontier)):
-                if(goal == child_node.state):
-                    return get_actions(child_node)
-                frontier.append(child_node)
-        if(env.accept_action(node.state[0],node.state[1]+1)):
-            child_node = Node(node, (node.state[0],node.state[1]+1), 'right')
-            if (not (child_node.state in explored) and not (child_node in frontier)):
-                if(goal == child_node.state):
-                    return get_actions(child_node)
-                frontier.append(child_node)
-        if(env.accept_action(node.state[0],node.state[1]-1)):
-            child_node = Node(node, (node.state[0],node.state[1]-1), 'left')
-            if (not (child_node.state in explored) and not (child_node in frontier)):
-                if(goal == child_node.state):
-                    return get_actions(child_node)
+        explored.add(node.state)
+        if goal == node.state:
+            return get_actions(node)
+        # Verificar las acciones y agregar nodos hijos
+        for action in ['up', 'down', 'right', 'left']:
+            if action == 'up':
+                new_state = (node.state[0] - 1, node.state[1])
+            elif action == 'down':
+                new_state = (node.state[0] + 1, node.state[1])
+            elif action == 'right':
+                new_state = (node.state[0], node.state[1] + 1)
+            elif action == 'left':
+                new_state = (node.state[0], node.state[1] - 1)
+            if env.accept_action(*new_state) and new_state not in explored:
+                child_node = Node(node, new_state, action)
                 frontier.append(child_node)
 
 
