@@ -2,6 +2,7 @@ from enviroment import Enviroment
 import random
 from algorithms.bfs import bfs
 from algorithms.uniform_cost_search import uniformCostSearch
+from algorithms.dfs import dfs
 
 
 class Agent:
@@ -19,6 +20,9 @@ class Agent:
         actions = uniformCostSearch(self.position,self.goal,self.env)
         return actions
 
+    def find_optimal_path_dfs(self):
+        actions = dfs(self.position,self.goal,self.env)
+        return actions
 
     def up(self):
         self.position = (self.position[0] - 1, self.position[1])
