@@ -1,4 +1,3 @@
-from collections import deque
 from enviroment import Enviroment
 from queue import LifoQueue
 
@@ -8,6 +7,14 @@ class Node:
         self.state = state
         self.action = action
 
+    def get_actions(self):
+        actions = []
+        while self.parent is not None:
+            actions.append(self.action)
+            self = self.parent
+        actions.reverse()  # Invierte la lista para obtener el camino correcto
+        return actions
+
 def dfs(start, goal, env:Enviroment):
     node = Node(None, start, None)
     frontier = LifoQueue()  
@@ -16,13 +23,13 @@ def dfs(start, goal, env:Enviroment):
     frontier_states.add(node.state)
     explored = set()
     if(goal == node.state):
-        return node
+        return [node.state]
     while frontier:
         node = frontier.get()
         frontier_states.remove(node.state)
         explored.add(node.state)
         if goal == node.state:
-            return get_actions(node)
+            return node.get_actions()
         # Verificar las acciones y agregar nodos hijos
         for action in ['up', 'down', 'right', 'left']:
             if action == 'up':
@@ -38,11 +45,3 @@ def dfs(start, goal, env:Enviroment):
                 frontier.put(child_node)
                 frontier_states.add(new_state)
 
-
-def get_actions(node):
-    actions = []
-    while node.parent is not None:
-        actions.append(node.action)
-        node = node.parent
-    actions.reverse()  # Invierte la lista para obtener el camino correcto
-    return actions

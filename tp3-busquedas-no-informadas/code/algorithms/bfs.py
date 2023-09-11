@@ -15,7 +15,7 @@ def bfs(start, goal, env:Enviroment):
     frontier_states.add(node.state)
     explored = set()
     if(goal == node.state):
-        return node
+        return [node.state]
     while frontier:
         node = frontier.popleft()
         frontier_states.remove(node.state)
