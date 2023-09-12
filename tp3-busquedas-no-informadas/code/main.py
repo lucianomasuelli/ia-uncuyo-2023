@@ -2,10 +2,7 @@ from agent import Agent
 from enviroment import Enviroment
 import numpy as np
 import matplotlib.pyplot as plt
-
-
-""" print("Limited DFS:")
-print(path3) """
+import csv
 
 
 def run_algorithm(agent:Agent):
@@ -24,6 +21,7 @@ def main():
     resultsBFS = []
     resultsDFS = []
     resultsUCS = []
+    results = []
 
     for _ in range(num_trials):
         env = Enviroment(50)
@@ -32,6 +30,15 @@ def main():
         resultsBFS.append(num_states_explored[0])
         resultsDFS.append(num_states_explored[1])
         resultsUCS.append(num_states_explored[2])
+
+        # Guardar resultados
+        for i, algorithm in enumerate(['BFS', 'DFS', 'UCS']):
+            results.append({
+                'Algorithm_name': algorithm,
+                'env_n': _ + 1,
+                'estates_n': num_states_explored[i],
+                'solution_found': num_states_explored[i] > 0
+            })
 
     # Calculate mean and standard deviation
     mean_states_explored_bfs = np.mean(resultsBFS)
@@ -43,11 +50,23 @@ def main():
     mean_states_explored_ucs = np.mean(resultsUCS)
     std_dev_states_explored_ucs = np.std(resultsUCS)
 
+    # Guardar resultados en un archivo CSV
+    with open('no-informada-results.csv', 'w', newline='') as csvfile:
+        fieldnames = ['Algorithm_name', 'env_n', 'estates_n', 'solution_found']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        
+        writer.writeheader()
+        for row in results:
+            writer.writerow(row)
+
     # Print results
+    print("---------------BFS-----------------")
     print(f"Mean states explored in BFS: {mean_states_explored_bfs}")
     print(f"Standard deviation of states explored in BFS: {std_dev_states_explored_bfs}")
+    print("---------------DFS-----------------")
     print(f"Mean states explored in DFS: {mean_states_explored_dfs}")
     print(f"Standard deviation of states explored in DFS: {std_dev_states_explored_dfs}")
+    print("---------------UCS-----------------")
     print(f"Mean states explored in UCS: {mean_states_explored_ucs}")
     print(f"Standard deviation of states explored in UCS: {std_dev_states_explored_ucs}")
 

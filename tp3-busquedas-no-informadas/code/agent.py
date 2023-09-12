@@ -4,6 +4,7 @@ from algorithms.bfs import bfs
 from algorithms.uniform_cost_search import uniformCostSearch
 from algorithms.dfs import dfs
 from algorithms.limited_dfs import limited_dfs
+from algorithms.limited_dfs import recursive_limited_dfs
 
 
 class Agent:
@@ -27,6 +28,10 @@ class Agent:
 
     def find_optimal_path_limited_dfs(self, depth_limit):
         actions = limited_dfs(self.position,self.goal,self.env, depth_limit)
+        return actions
+    
+    def find_optimal_path_recursive_limited_dfs(self, depth_limit):
+        actions = recursive_limited_dfs(self.position,self.goal,self.env, depth_limit)
         return actions
 
     def up(self):

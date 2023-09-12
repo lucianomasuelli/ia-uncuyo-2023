@@ -20,7 +20,6 @@ class Node:
         return actions
     
     
-    
 class Tree:
     root: None
 

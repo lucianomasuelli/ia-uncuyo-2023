@@ -44,4 +44,3 @@ def dfs(start, goal, env:Enviroment):
                 child_node = Node(node, new_state, action)
                 frontier.put(child_node)
                 frontier_states.add(new_state)
-
