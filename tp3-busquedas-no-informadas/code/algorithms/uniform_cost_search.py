@@ -24,6 +24,7 @@ class Tree:
     root: None
 
 def uniformCostSearch(start, goal, env:Enviroment):
+    count_explored = 0 
     node: Node = Node(None, start, None, 1)
     frontier = PriorityQueue() #utilizar append() y popleft() para FIFO
     frontier.put((node.pathCost,node))
@@ -31,13 +32,14 @@ def uniformCostSearch(start, goal, env:Enviroment):
     frontier_states.add(node.state)
     explored = set()
     if(goal == node.state):
-        return [node.state]
+        return [node.state],count_explored
     while frontier:
         _ , node = frontier.get()
         frontier_states.remove(node.state)
         explored.add(node.state)
+        count_explored += 1
         if goal == node.state:
-            return node.get_actions()
+            return node.get_actions(),count_explored
         # Verificar las acciones y agregar nodos hijos
         for action in ['up', 'down', 'right', 'left']:
             if action == 'up':

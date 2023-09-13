@@ -8,6 +8,7 @@ class Node:
         self.action = action
 
 def bfs(start, goal, env:Enviroment):
+    count_explored = 0
     node = Node(None, start, None)
     frontier = deque()  # Utilizar append() y popleft() para FIFO
     frontier_states = set()  # Mantener un conjunto de estados en frontier
@@ -15,13 +16,14 @@ def bfs(start, goal, env:Enviroment):
     frontier_states.add(node.state)
     explored = set()
     if(goal == node.state):
-        return [node.state]
+        return [node.state], count_explored
     while frontier:
         node = frontier.popleft()
         frontier_states.remove(node.state)
         explored.add(node.state)
+        count_explored += 1
         if goal == node.state:
-            return get_actions(node)
+            return get_actions(node), count_explored
         # Verificar las acciones y agregar nodos hijos
         for action in ['up', 'down', 'right', 'left']:
             if action == 'up':

@@ -16,6 +16,7 @@ class Node:
         return actions
 
 def dfs(start, goal, env:Enviroment):
+    count_explored = 0
     node = Node(None, start, None)
     frontier = LifoQueue()  
     frontier_states = set()  # Mantener un conjunto de estados en frontier
@@ -23,13 +24,14 @@ def dfs(start, goal, env:Enviroment):
     frontier_states.add(node.state)
     explored = set()
     if(goal == node.state):
-        return [node.state]
+        return [node.state], count_explored
     while frontier:
         node = frontier.get()
         frontier_states.remove(node.state)
         explored.add(node.state)
+        count_explored += 1
         if goal == node.state:
-            return node.get_actions()
+            return node.get_actions(), count_explored
         # Verificar las acciones y agregar nodos hijos
         for action in ['up', 'down', 'right', 'left']:
             if action == 'up':
