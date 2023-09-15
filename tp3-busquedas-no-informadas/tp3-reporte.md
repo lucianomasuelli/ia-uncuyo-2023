@@ -1,5 +1,5 @@
 ## Media y desviación estandar para cada algoritmo
-Se ejecutó cada algoritmo 30 veces en el mismo escenario aleatorio de 50x50.
+Se ejecutó cada algoritmo 30 veces en el mismo escenario aleatorio de 100x100.
 ![media_desviacion](https://github.com/lucianomasuelli/ia-uncuyo-2023/assets/83616746/0be95fc8-e495-4f08-9148-d2a278f65c21)
 
 ## Boxplot
