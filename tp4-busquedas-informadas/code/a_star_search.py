@@ -49,6 +49,7 @@ def deleteNode(pq: PriorityQueue, node):
         pq.put(temp_queue.get())
 
 def a_star_search(start, goal, env:Enviroment):
+    count_explored = 0
     frontier = PriorityQueue()
     frontier.put((0, Node(None, start, None, 0)))
     frontier_states = set()
@@ -56,8 +57,9 @@ def a_star_search(start, goal, env:Enviroment):
     while not frontier.empty():
         node = frontier.get()[1]
         if node.state == goal:
-            return node.get_actions()
+            return node.get_actions(), count_explored
         explored.append(node.state)
+        count_explored += 1
         for action in ['up', 'down', 'right', 'left']:
             child_state = env.result(node.state, action)
             if (child_state not in explored) and (child_state not in frontier_states) and (env.accept_action(*child_state)):
