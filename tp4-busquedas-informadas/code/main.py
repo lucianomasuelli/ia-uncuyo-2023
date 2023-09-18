@@ -1,5 +1,5 @@
 from agent import Agent
-from enviroment import Enviroment
+from environment import Environment
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -36,7 +36,7 @@ def main():
     results = []
 
     for _ in range(num_trials):
-        env = Enviroment(100)
+        env = Environment(100)
         agent = Agent(env.start, env.goal, env)
         num_states_path, num_states_explored = run_algorithm(agent)
         resultsBFS.append(num_states_path[0])

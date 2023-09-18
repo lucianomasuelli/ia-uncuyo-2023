@@ -1,4 +1,4 @@
-from enviroment import Enviroment
+from environment import Environment
 from a_star_search import a_star_search
 from algorithms.bfs import bfs
 from algorithms.dfs import dfs
@@ -10,7 +10,7 @@ class Agent:
     def __init__(self, start, goal, env):
         self.position = start
         self.goal = goal
-        self.env : Enviroment = env
+        self.env : Environment = env
         self.perf = 0
 
     def find_optimal_path_bfs(self):

@@ -1,6 +1,6 @@
 import importlib
 from queue import PriorityQueue
-from enviroment import Enviroment
+from environment import Environment
 
 class Node:
     def __init__(self, parent, state, action, pathCost):
@@ -48,7 +48,7 @@ def deleteNode(pq: PriorityQueue, node):
     while not temp_queue.empty():
         pq.put(temp_queue.get())
 
-def a_star_search(start, goal, env:Enviroment):
+def a_star_search(start, goal, env:Environment):
     count_explored = 0
     frontier = PriorityQueue()
     frontier.put((0, Node(None, start, None, 0)))
