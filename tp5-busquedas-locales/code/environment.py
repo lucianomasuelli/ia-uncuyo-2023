@@ -18,13 +18,13 @@ class Environment:
                     h += 1
         return h
 
-    def initialState(self):
+    def initial_state(self):
         for i in range(self.size):
             num = random.randint(0, self.size - 1)
             self.board.append(num)
         return self.board
 
-    def bestNeighbor(self, state): #returns the neighbor with the lowest heuristic
+    def best_neighbor(self, state): #returns the neighbor with the lowest heuristic
         bestNeighbor = state
         bestHeuristic = self.heuristic(state)
         for i in range(len(state)):
@@ -38,15 +38,16 @@ class Environment:
                         bestHeuristic = h
         return bestNeighbor
 
-    def printBoard(self, state):
-        for i in range(self.size):
-            for j in range(self.size):
-                if state[j] == i:
-                    print("Q", end=" ")
-                else:
-                    print("*", end=" ")
-            print()
-        print()
+    def neighbors(self, state):
+        neighbors = []
+        for i in range(len(state)):
+            for j in range(len(state)):
+                if i != j:
+                    newState = list(state)
+                    newState[i] = j  # change the queen in row i to column j
+                    neighbors.append(newState)
+        return neighbors
+
 
     def plot_board(self,state):
         n = len(state)

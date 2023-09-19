@@ -1,15 +1,15 @@
 from environment import Environment
 
 
-def hillClimbing(env: Environment, maxIterations):  # calculates a solution for the n-queens problem using hill climbing
-    current = env.initialState()
+def hill_climbing(env: Environment, maxIterations, start):  # calculates a solution for the n-queens problem using hill climbing
+    current = start
     i = 0
     while i < maxIterations:
         current_heuristic = env.heuristic(current)
         if current_heuristic == 0:
             return current, i
         else:
-            neighbor = env.bestNeighbor(current)
+            neighbor = env.best_neighbor(current)
             neighbor_heuristic = env.heuristic(neighbor)
             if neighbor_heuristic < current_heuristic:
                 current = neighbor
