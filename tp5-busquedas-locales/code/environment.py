@@ -48,6 +48,20 @@ class Environment:
                     neighbors.append(newState)
         return neighbors
 
+    def random_neighbor(self, state):
+        i = random.randint(0, len(state) - 1)
+        j = random.randint(0, len(state) - 1)
+        newState = list(state)
+        newState[i] = j
+        return newState
+
+    def random_state(self):
+        state = []
+        for i in range(self.size):
+            num = random.randint(0, self.size - 1)
+            state.append(num)
+        return state
+
 
     def plot_board(self,state):
         n = len(state)
