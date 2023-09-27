@@ -15,9 +15,10 @@ def genetic(environment: Environment, population_size: int, iterations: int, mut
     population = get_population(environment, population_size)
     sum_fitness, best_state = get_population_fitness(environment, population)
     elite_size = int(population_size * 0.1)
+    h_variation = []
 
     if fitness(environment, best_state) == 0:
-        return best_state, 0
+        return best_state, 0, [0]
 
     i = 0
     while iterations > 0:
@@ -29,13 +30,14 @@ def genetic(environment: Environment, population_size: int, iterations: int, mut
         new_population = elites + offspring
         sum_fitness, best_state = get_population_fitness(environment, new_population)
 
+        h_variation.append(fitness(environment, best_state))
         if fitness(environment, best_state) == 0:
-            return best_state, i
+            return best_state, i, h_variation
 
         population = new_population
         iterations -= 1
         i += 1
-    return best_state, i
+    return best_state, i, h_variation
 
 
 def get_population_fitness(environment: Environment, population):

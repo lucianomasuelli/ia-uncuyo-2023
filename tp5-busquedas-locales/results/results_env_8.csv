@@ -1,0 +1,91 @@
+Algorithm_name,env_n,states_n,solution_found
+Hill Climbing,1,3,False
+Simulated Annealing,1,14527,False
+Genetic,1,2286,True
+Hill Climbing,2,3,True
+Simulated Annealing,2,14527,False
+Genetic,2,6943,True
+Hill Climbing,3,3,False
+Simulated Annealing,3,14527,False
+Genetic,3,39,True
+Hill Climbing,4,4,False
+Simulated Annealing,4,257,True
+Genetic,4,10000,False
+Hill Climbing,5,3,False
+Simulated Annealing,5,169,True
+Genetic,5,2081,True
+Hill Climbing,6,3,True
+Simulated Annealing,6,1444,True
+Genetic,6,10000,False
+Hill Climbing,7,3,False
+Simulated Annealing,7,353,True
+Genetic,7,10000,False
+Hill Climbing,8,4,False
+Simulated Annealing,8,14527,False
+Genetic,8,2537,True
+Hill Climbing,9,3,False
+Simulated Annealing,9,14527,False
+Genetic,9,10000,False
+Hill Climbing,10,3,False
+Simulated Annealing,10,14527,False
+Genetic,10,10000,False
+Hill Climbing,11,3,False
+Simulated Annealing,11,14527,False
+Genetic,11,523,True
+Hill Climbing,12,4,True
+Simulated Annealing,12,14527,False
+Genetic,12,717,True
+Hill Climbing,13,4,False
+Simulated Annealing,13,14527,False
+Genetic,13,958,True
+Hill Climbing,14,3,False
+Simulated Annealing,14,373,True
+Genetic,14,4188,True
+Hill Climbing,15,4,False
+Simulated Annealing,15,355,True
+Genetic,15,2626,True
+Hill Climbing,16,4,False
+Simulated Annealing,16,14527,False
+Genetic,16,10000,False
+Hill Climbing,17,4,False
+Simulated Annealing,17,14527,False
+Genetic,17,1730,True
+Hill Climbing,18,3,True
+Simulated Annealing,18,282,True
+Genetic,18,5750,True
+Hill Climbing,19,3,False
+Simulated Annealing,19,14527,False
+Genetic,19,10000,False
+Hill Climbing,20,3,False
+Simulated Annealing,20,14046,True
+Genetic,20,562,True
+Hill Climbing,21,5,True
+Simulated Annealing,21,173,True
+Genetic,21,8427,True
+Hill Climbing,22,4,False
+Simulated Annealing,22,1561,True
+Genetic,22,568,True
+Hill Climbing,23,2,False
+Simulated Annealing,23,14527,False
+Genetic,23,951,True
+Hill Climbing,24,2,False
+Simulated Annealing,24,740,True
+Genetic,24,10000,False
+Hill Climbing,25,4,False
+Simulated Annealing,25,84,True
+Genetic,25,9633,True
+Hill Climbing,26,4,False
+Simulated Annealing,26,988,True
+Genetic,26,10000,False
+Hill Climbing,27,3,False
+Simulated Annealing,27,14527,False
+Genetic,27,1866,True
+Hill Climbing,28,5,False
+Simulated Annealing,28,284,True
+Genetic,28,616,True
+Hill Climbing,29,3,False
+Simulated Annealing,29,2036,True
+Genetic,29,1105,True
+Hill Climbing,30,3,False
+Simulated Annealing,30,14527,False
+Genetic,30,1241,True

@@ -1,0 +1,18 @@
+-----------Hill Climbing------------
+Mean states explored in Hill Climbing:  4.0
+Standard deviation of states explored in Hill Climbing:  1.1547005383792515
+Mean execution time in Hill Climbing:  0.0001995563507080078
+Standard deviation of execution time in Hill Climbing:  0.0010565813095031497
+Percentage of solutions found in Hill Climbing:  0.03333333333333333
+-----------Simulated Annealing------------
+Mean states explored in Simulated Annealing:  8243.033333333333
+Standard deviation of states explored in Simulated Annealing:  6174.14413223044
+Mean execution time in Simulated Annealing:  0.12423110008239746
+Standard deviation of execution time in Simulated Annealing:  0.19352416542886744
+Percentage of solutions found in Simulated Annealing:  0.5666666666666667
+-----------Genetic------------
+Mean states explored in Genetic:  8386.6
+Standard deviation of states explored in Genetic:  2809.4257016930233
+Mean execution time in Genetic:  1.7608391523361206
+Standard deviation of execution time in Genetic:  2.8734680155178016
+Percentage of solutions found in Genetic:  0.26666666666666666
