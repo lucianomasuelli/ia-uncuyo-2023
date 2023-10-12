@@ -21,35 +21,38 @@ def recursive_backtracking(assignment, csp):
 
 def select_unassigned_variable(assignment, csp):
     min_mrv = 100000
+    min_var = None
     for var in csp.variables:
-        var_mrv = mrv(var, assignment, csp)
-        if var_mrv < min_mrv:
-            min_mrv = var_mrv
-    return min_mrv
+        if var not in assignment:
+            var_mrv = mrv(var, assignment, csp)
+            if var_mrv < min_mrv:
+                min_mrv = var_mrv
+                min_var = var
+    return min_var
 
 
-def mrv(var, assignment, csp):
-    if var in assignment:
-        return 100000
-    else:
-        return len(csp.domains[var])
+def mrv(var, assignment, csp):  # minimum remaining values
+    count = 0
+    for value in csp.domains[var]:
+        if csp.is_consistent(var, value, assignment):
+            count += 1
+    return count
 
 
 def order_domain_values(var, assignment, csp):
     least_constraining_values = []
     for value in csp.domains[var]:
-        least_constraining_values.append((value, lcv(var, value, assignment, csp)))
+        least_constraining_values.append((value, constraining_value(var, value, assignment, csp)))
     least_constraining_values.sort(key=lambda x: x[1])  # sort by least constraining value
     return [value[0] for value in least_constraining_values]  # return only the values
 
 
-def lcv(var, value, csp):
+def constraining_value(var, value, assignment,  csp):  # constraining value
     count = 0
     for constraint in csp.constraints:
         if var in constraint.variables:
-            for other_var in constraint.variables:
-                if other_var != var:
-                    for other_value in csp.domains[other_var]:
-                        if not constraint.is_satisfied({var: value, other_var: other_value}):
-                            count += 1
+            for other_var, other_value in assignment.items():
+                if other_var in constraint.variables:
+                    if not constraint.is_satisfied({var: value, other_var: other_value}):
+                        count += 1
     return count

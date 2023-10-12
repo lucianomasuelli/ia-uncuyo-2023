@@ -6,9 +6,11 @@ class Csp:
         self.constraints = constraints
 
     def is_consistent(self, var, value, assignment):
+        new_assignment = dict(assignment)  # copy assignment
+        new_assignment[var] = value
         for constraint in self.constraints:
             if var in constraint.variables:
-                if not constraint.is_satisfied(assignment):
+                if not constraint.is_satisfied(new_assignment):
                     return False
         return True
 
@@ -30,10 +32,10 @@ class RowsConstraint(Constraint):
         for var1 in self.variables:
             for var2 in self.variables:
                 if var1 != var2:
-                    # Verifica restricciones de columna
-                    if assignment[var1] == assignment[var2]:
-                        return False
-
+                    if var1 in assignment and var2 in assignment:
+                        # Verifica restricciones de columna
+                        if assignment[var1] == assignment[var2]:
+                            return False
         return True
 
 
@@ -45,8 +47,8 @@ class DiagonalsConstraint(Constraint):
         for var1 in self.variables:
             for var2 in self.variables:
                 if var1 != var2:
-                    # Verifica restricciones de diagonal
-                    if abs(assignment[var1] - assignment[var2]) == abs(var1 - var2):
-                        return False
-
+                    if var1 in assignment and var2 in assignment:
+                        # Verifica restricciones de diagonal
+                        if abs(assignment[var1] - assignment[var2]) == abs(var1 - var2):
+                            return False
         return True

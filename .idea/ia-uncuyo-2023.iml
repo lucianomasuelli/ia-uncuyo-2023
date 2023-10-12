@@ -9,6 +9,7 @@
     <option name="namespacePackageFolders">
       <list>
         <option value="$MODULE_DIR$/tp5-busquedas-locales" />
+        <option value="$MODULE_DIR$/tp6-csp" />
       </list>
     </option>
   </component>
