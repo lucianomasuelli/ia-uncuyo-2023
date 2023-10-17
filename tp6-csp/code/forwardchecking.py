@@ -6,24 +6,24 @@ def forward_checking_search(csp: Csp):
     return recursive_backtracking({}, csp)
 
 
-def recursive_backtracking(assignment, csp: Csp):
+def recursive_backtracking(assignment, csp: Csp, visited_states=0):
     if len(assignment) == len(csp.variables):
-        return assignment
+        return assignment, visited_states
     var = select_unassigned_variable(assignment, csp)
     for value in order_domain_values(var, assignment, csp):
         if csp.is_consistent(var, value, assignment):
             assignment[var] = value
             domains_copy = copy.deepcopy(csp.domains)  # copy domains
-            forward_checking(assignment, csp)
-            result = recursive_backtracking(assignment, csp)
-            if result is not None:
-                return result
+            if forward_checking(assignment, csp) is not None:
+                result, visited_states = recursive_backtracking(assignment, csp, visited_states + 1)
+                if result is not None:
+                    return result, visited_states
             del assignment[var]
             # Restore the domains of the unassigned variables
             for unassigned_var in csp.variables:
                 if unassigned_var not in assignment:
                     csp.domains[unassigned_var] = domains_copy[unassigned_var]
-    return None
+    return None, visited_states
 
 
 def select_unassigned_variable(assignment, csp):
@@ -74,4 +74,4 @@ def forward_checking(assignment, csp):
                     csp.domains[var].remove(value)
             if len(csp.domains[var]) == 0:
                 return None
-    return
+    return assignment

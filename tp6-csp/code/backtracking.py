@@ -5,18 +5,19 @@ def backtracking_search(csp: Csp):
     return recursive_backtracking({}, csp)
 
 
-def recursive_backtracking(assignment, csp):
+def recursive_backtracking(assignment, csp, visited_states=0):
     if len(assignment) == len(csp.variables):
-        return assignment
+        return assignment, visited_states
     var = select_unassigned_variable(assignment, csp)
     for value in order_domain_values(var, assignment, csp):
         if csp.is_consistent(var, value, assignment):
             assignment[var] = value
-            result = recursive_backtracking(assignment, csp)
+            visited_states += 1
+            result, visited_states = recursive_backtracking(assignment, csp, visited_states)
             if result is not None:
-                return result
+                return result, visited_states
             del assignment[var]
-    return None
+    return None, visited_states
 
 
 def select_unassigned_variable(assignment, csp):
