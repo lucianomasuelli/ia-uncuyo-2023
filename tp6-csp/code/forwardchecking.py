@@ -1,21 +1,28 @@
 from csp import Csp
+import copy
 
 
-def backtracking_search(csp: Csp):
+def forward_checking_search(csp: Csp):
     return recursive_backtracking({}, csp)
 
 
-def recursive_backtracking(assignment, csp):
+def recursive_backtracking(assignment, csp: Csp):
     if len(assignment) == len(csp.variables):
         return assignment
     var = select_unassigned_variable(assignment, csp)
     for value in order_domain_values(var, assignment, csp):
         if csp.is_consistent(var, value, assignment):
             assignment[var] = value
+            domains_copy = copy.deepcopy(csp.domains)  # copy domains
+            forward_checking(assignment, csp)
             result = recursive_backtracking(assignment, csp)
             if result is not None:
                 return result
             del assignment[var]
+            # Restore the domains of the unassigned variables
+            for unassigned_var in csp.variables:
+                if unassigned_var not in assignment:
+                    csp.domains[unassigned_var] = domains_copy[unassigned_var]
     return None
 
 
@@ -56,3 +63,15 @@ def constraining_value(var, value, assignment,  csp):  # constraining value
                     if not constraint.is_satisfied({var: value, other_var: other_value}):
                         count += 1
     return count
+
+
+def forward_checking(assignment, csp):
+    domains_copy = copy.deepcopy(csp.domains)  # copy domains
+    for var in csp.variables:
+        if var not in assignment:
+            for value in domains_copy[var]:
+                if not csp.is_consistent(var, value, assignment):
+                    csp.domains[var].remove(value)
+            if len(csp.domains[var]) == 0:
+                return None
+    return

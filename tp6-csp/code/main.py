@@ -1,5 +1,6 @@
 from csp import Csp, RowsConstraint, DiagonalsConstraint
 from backtracking import backtracking_search
+from forwardchecking import forward_checking_search
 
 
 # A CSP for the n-queens problem
@@ -10,10 +11,16 @@ def main():
         domains[var] = [0, 1, 2, 3, 4, 5, 6, 7]
     constraints = [RowsConstraint(variables), DiagonalsConstraint(variables)]
     csp = Csp(variables, domains, constraints)
-    result = backtracking_search(csp)
-    print(result)
-    print(heuristic(result))
-    print_board(result)
+    result_backtrack = backtracking_search(csp)
+    result_forward = forward_checking_search(csp)
+    print("Backtracking:")
+    print(result_backtrack)
+    print("Heuristic: " + str(heuristic(result_backtrack)))
+    print_board(result_backtrack)
+    print("Forward checking:")
+    print(result_forward)
+    print("Heuristic: " + str(heuristic(result_forward)))
+    print_board(result_forward)
 
 
 def heuristic(result):
@@ -28,14 +35,16 @@ def heuristic(result):
     return h
 
 def print_board(result):
+    length = len(result)
+    ordered = sorted(result.items())
     board = []
-    for i in range(8):
+    for i in range(length):
         board.append([])
-        for j in range(8):
+        for j in range(length):
             board[i].append(0)
-    for var, value in result.items():
-        board[var][value] = 1
-    for i in range(8):
+    for (var, value) in ordered:
+        board[value][var] = 1
+    for i in range(length):
         print(board[i])
 
 
