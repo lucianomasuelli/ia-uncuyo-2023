@@ -1,4 +1,5 @@
 ## Ejercicio 7
+### Código de funciones `create_folds` y `cross_validation`
 ```
 source("/home/luciano/Documentos/Facultad/3ro/2_semestre/Inteligencia_artificial_1/ia-uncuyo-2023/tp7-ml/metricas.R")
 library(rpart)
@@ -66,3 +67,9 @@ confusion_matrix <- function(predictions, test_data) {
   return(confusion_matrix)
 }
 ```
+### Resultados de las métricas
+
+|                    | Accuracy         | Precision       | Sensitivity     | Specificity      |
+|----------------------|--------------------|-------------------|-------------------|--------------------|
+| Mean               | 0.618461538461539  | 0.482688770184126 | 0.666827564643315 | 0.587099579721795  |
+| Standard deviation | 0.0366304241192837 | 0.22963655451808  | 0.116309010771132 | 0.0541635011109496 |
