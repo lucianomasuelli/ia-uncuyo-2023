@@ -23,14 +23,14 @@ confusion_matrix <- function(dataframe) {
   return(confusion_matrix)
 }
 
-#data <- read.csv("/home/luciano/Documentos/Facultad/3ro/2_semestre/Inteligencia_artificial_1/ia-uncuyo-2023/tp7-ml/data/arbolado-mendoza-dataset-validation.csv")
+data <- read.csv("/home/luciano/Documentos/Facultad/3ro/2_semestre/Inteligencia_artificial_1/ia-uncuyo-2023/tp7-ml/data/arbolado-mendoza-dataset-validation.csv")
 
-#new_dataframe <- biggerclass_classifier(data)
+new_dataframe <- biggerclass_classifier(data)
 
 # Mostrar los primeros 10 resultados
-#head(new_dataframe, 10)
+head(new_dataframe, 10)
 
-#confusion_matrix(new_dataframe)
+confusion_matrix(new_dataframe)
 
-#print("Matriz de confusión para biggerclass_classifier")
-#print(confusion_matrix(new_dataframe))
+print("Matriz de confusión para biggerclass_classifier")
+print(confusion_matrix(new_dataframe))
