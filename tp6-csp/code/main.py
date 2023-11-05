@@ -37,15 +37,17 @@ def main():
 
     csp_list = [(csp_4, "4 Queens"), (csp_8, "8 Queens"), (csp_12, "12 Queens"), (csp_15, "15 Queens")]
 
-    execution_times = []
-    visited_states = []
+    execution_times_backtracking = []
+    execution_times_forward = []
+    visited_states_backtracking = []
+    visited_states_forward = []
 
     for csp, name in csp_list:
         start_time = time.time()
         result_backtrack, visited_bt = backtracking_search(csp)
         end_time = time.time()
-        execution_times.append(end_time - start_time)
-        visited_states.append(visited_bt)
+        execution_times_backtracking.append(end_time - start_time)
+        visited_states_backtracking.append(visited_bt)
         print(name + " - Backtracking:")
         print(result_backtrack)
         print("Heuristic: " + str(heuristic(result_backtrack)))
@@ -57,8 +59,8 @@ def main():
         start_time = time.time()
         result_forward, visited_fwd = forward_checking_search(csp)
         end_time = time.time()
-        execution_times.append(end_time - start_time)
-        visited_states.append(visited_fwd)
+        execution_times_forward.append(end_time - start_time)
+        visited_states_forward.append(visited_fwd)
         print(name + " - Forward checking:")
         print(result_forward)
         print("Heuristic: " + str(heuristic(result_forward)))
@@ -69,14 +71,21 @@ def main():
 
     # Plot boxplots for execution times and visited states
     fig, axs = plt.subplots(1, 2, figsize=(10, 5))
-    axs[0].boxplot(execution_times)
-    axs[0].set_xticklabels(["Backtracking", "Forward checking"] * 4)
+
+    # Boxplot para execution times
+    axs[0].boxplot([execution_times_backtracking, execution_times_forward])
+    axs[0].set_xticks([1, 2])
+    axs[0].set_xticklabels(["Backtracking", "Forward checking"])
     axs[0].set_title("Execution times")
     axs[0].set_ylabel("Time (seconds)")
-    axs[1].boxplot(visited_states)
-    axs[1].set_xticklabels(["Backtracking", "Forward checking"] * 4)
+
+    # Boxplot para visited states
+    axs[1].boxplot([visited_states_backtracking, visited_states_forward])
+    axs[1].set_xticks([1, 2])
+    axs[1].set_xticklabels(["Backtracking", "Forward checking"])
     axs[1].set_title("Visited states")
     axs[1].set_ylabel("States visited")
+
     plt.show()
 
 
