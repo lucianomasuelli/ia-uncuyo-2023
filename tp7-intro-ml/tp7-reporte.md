@@ -8,4 +8,13 @@ Esperaríamos que un método flexible tenga un mejor desempeño ya que los infle
 ## d) La varianza de los términos de error, es extremadamente alta.
 En este caso los métodos flexibles pueden sufrir un sobreajuste ya que tratarían de adaptarse a la gran variabilidad, por otro lado, los métodos inflexibles al ser más simples y menos sensibles a la complejidad de los datos, pueden tener un mejor desempeño ante una alta varianza de error.
 
-
+# Ejercicio 2
+## a)
+Es un caso de regresión ya que en base a varios factores queremos obtener una correlación con el comportamiento de un factor (salario) que es una variable continua. Es un problema de inferencia.  
+`p` es `500` y `n` es `4`.  
+## b)
+Este es un problema de predicción, donde se utilizaría un método de clasificación ya que se quiere predecir si el producto será exitoso o no.  
+`p` es `20` y `n` es `14`.
+## c)
+Es un caso de predicción donde se utilizará un método de regresión porque se quiere predecir un valor continuo.  
+`p` es `52` y `n` es `4`.
