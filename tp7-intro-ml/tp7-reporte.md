@@ -24,3 +24,26 @@ Cuando se utilizan métodos de regresión o clasificación, una implementación 
 La desventaja principal de estos métodos flexibles, es que son muy propensos al sobreajuste, adaptandose de sobremanera a los datos de entrenamiento y afectando el desempeño con datos reales.  
 Un enfoque menos flexible puede ser útil cuando se necesita una buena interpretabilidad del modelo para entender los resultados, ya que los flexibles pueden llegar a ser muy difíciles de interprear en algunos casos. Tambén tienen la ventaja de que el sobreajuste puede ser mejor controlado para tener una mejor generalización.  
 La desventaja de estos enfoques es su incapacidad para adaptarse a datos complejos o para obtener predicciones complejas.
+
+# Ejercicio 6
+El enfoque paramétrico implica hacer suposiciones específicas sobre la forma funcional de la relación entre las variables y asume un número fijo de parámetros que caracterizan dicha relación. Estos modelos, como la regresión lineal, son más simples y fáciles de interpretar, pero su eficacia depende de la precisión de las suposiciones realizadas, lo que puede limitar su capacidad para capturar patrones complejos en los datos.  
+Por otro lado, el enfoque no paramétrico no impone suposiciones específicas sobre la forma de la relación y permite que la complejidad del modelo se adapte a la complejidad de los datos. Estos modelos son más flexibles y pueden manejar relaciones no lineales y estructuras de datos más complejas. Aunque pueden ser más robustos en ciertos escenarios, la falta de suposiciones explícitas puede dificultar la interpretación del modelo y requerir conjuntos de datos más grandes para obtener estimaciones precisas.
+
+# Ejercicio 7
+## a) Distancia euclidiana
+1)  sqrt(0^2 + 3^2 + 0^2) = 3   
+2) 	sqrt(2^2 + 0^2 + 0^2) = 2   
+3) 	sqrt(0^2 + 1^2 + 3^2) = sqrt(10)  
+4) 	sqrt(0^2 + 1^2 + 2^2) = sqrt(10)  
+5) 	sqrt((-1)^2 + 0^2 + 1^2) = sqrt(2)    
+6) 	sqrt(1^2 + 1^2 + 1^2) = sqrt(3)
+
+## b) 
+El vecino mas cercano es la observación 5 ya que tiene una distancia euclidiana de sqrt(2) y una valor de la variable Y = Green, por lo tanto la predicción sera Y = Green.
+
+## c)
+Los 3 vecinos mas cercanos son 5,6 y 2. Dos tienen valor Y = Red y uno de Y = Green por lo tanto, como hay mas probabilidad de pertenecer a la clase Red, el valor será Y = Red.
+
+## d)
+Si la frontera de decisión de Bayes es altamente no lineal, esperaríamos que el mejor valor para K sea pequeño, ya que esto hará que el modelo sea mas flexible y pueda encontrar características más complejas.
+
