@@ -18,3 +18,9 @@ Este es un problema de predicción, donde se utilizaría un método de clasifica
 ## c)
 Es un caso de predicción donde se utilizará un método de regresión porque se quiere predecir un valor continuo.  
 `p` es `52` y `n` es `4`.
+
+# Ejercicio 5
+Cuando se utilizan métodos de regresión o clasificación, una implementación con un método mas flexible puede ser una buena opción si el problema requiere encontrar patrones más complejos, puede adaptarse a relaciones no lineales, capturando patrones que métodos inflexibles no encontrarían. Esto lleva a un mejor ajuste de los datos de entrenamiento y por ende a un rendimiento superior en la predicción.  
+La desventaja principal de estos métodos flexibles, es que son muy propensos al sobreajuste, adaptandose de sobremanera a los datos de entrenamiento y afectando el desempeño con datos reales.  
+Un enfoque menos flexible puede ser útil cuando se necesita una buena interpretabilidad del modelo para entender los resultados, ya que los flexibles pueden llegar a ser muy difíciles de interprear en algunos casos. Tambén tienen la ventaja de que el sobreajuste puede ser mejor controlado para tener una mejor generalización.  
+La desventaja de estos enfoques es su incapacidad para adaptarse a datos complejos o para obtener predicciones complejas.
