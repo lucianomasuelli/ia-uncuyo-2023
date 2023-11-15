@@ -37,3 +37,7 @@ Por lo tanto, hemos demostrado que la 2-consistencia implica n-consistencia para
   
 La demostración anterior muestra que si aplicamos 2-consistencia en un CSP con un grafo de restricciones que es un árbol, entonces podemos garantizar la n-consistencia para cualquier restricción n-aria en ese CSP.  
 Esto es suficiente porque garantizar la n-consistencia para todas las restricciones n-arias en el CSP asegura que no habrá conflictos entre los valores permitidos por estas restricciones, lo que significa que cualquier asignación válida de valores a las variables será una solución válida para el CSP.
+
+## 6)
+### Boxplot de tiempos de ejecución y velocidades de ejecución para casos de 4, 8, 10, 12 y 15 reinas.
+![plot_6](https://github.com/lucianomasuelli/ia-uncuyo-2023/assets/83616746/7a57a778-11fa-4f01-9a33-eb5490c33b84)
