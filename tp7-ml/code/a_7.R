@@ -103,6 +103,18 @@ sd_specificity <- sd(unlist(specificity))
 print(paste0("Mean specificity: ", mean_specificity))
 print(paste0("Standard deviation specificity: ", sd_specificity))
 
+# Table with mean and standard deviation results
+results <- data.frame(
+  accuracy = c(mean_accuracy, sd_accuracy),
+  precision = c(mean_precision, sd_precision),
+  sensitivity = c(mean_sensitivity, sd_sensitivity),
+  specificity = c(mean_specificity, sd_specificity)
+)
+
+rownames(results) <- c("Mean", "Standard deviation")
+
+# Export as csv
+write.csv(results, file = "/home/luciano/Documentos/Facultad/3ro/2_semestre/Inteligencia_artificial_1/ia-uncuyo-2023/tp7-ml/results_cross_validation.csv")
 
 
 
