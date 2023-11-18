@@ -60,13 +60,16 @@ en comparación con un programa tradicional.
 ## Listado de actividades a realizar
 1. Recopilación de datos [1 dia]
 2. Limpieza y puesta a punto del dataset [3 dias]
-3. Estudio de los atributos más descriptivos [2 dias]
+3. Estudio de los atributos más descriptivos [2 dias - 4 dias]
 4. Investigación de modelos aplicables al problema [7 dias]
 5. Evaluación de distintos modelos de machine learning [7 dias]
 6. Comparar resultados de los distintos modelos frente a un algoritmo aleatorio [2 dias]
 7. Obtención de métricas para evaluar resultados [1 dia]
 8. Análisis de los resultados [1 dia]
 9. Optimización del código [2 dias]
+
+## Diagrama de Gantt
+![Online Gantt 20231117](https://github.com/lucianomasuelli/ia-uncuyo-2023/assets/83616746/c6540b89-48f3-48e9-90e7-dc60729f1678)
 
 ## Papers o Referencias
 https://www.researchgate.net/publication/353766670_Using_Machine_Learning_to_Predict_Game_Outcomes_Based_on_Player-Champion_Experience_in_League_of_Legends
